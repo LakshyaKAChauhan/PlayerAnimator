@@ -17,7 +17,7 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.18.2_1.0.2'
+version = '1.18.2_1.0.3'
 group = 'net.chauhanDevs.advance_modder'
 archivesBaseName = 'plr_anim'
 
