@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="All rights reserved"
+#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+[[mods]] #mandatory
+modId="plr_anim"
+version="${file.jarVersion}"
+displayName="Player Animator"
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
+#logoFile="examplemod.png" #optional
+credits="LakshyaK2011"
+authors="LakshyaK2011"
+description='''
+Animating Player Model Can Be Very Complex Sometimes
+This Simple Library Helps Modder To Animate The Player In Just Come Few Lines Of Code!
+Refer To This Mod's Wiki On How To Use It.
+Use This Library Now!
+'''
+[[dependencies.plr_anim]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[40,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.plr_anim]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
