@@ -19,7 +19,7 @@ apply plugin: 'org.spongepowered.mixin'
 
 version = '1.18.2_1.0.2'
 group = 'net.chauhanDevs.advance_modder'
-archivesBaseName = 'player_anim'
+archivesBaseName = 'plr_anim'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -43,12 +43,12 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'player_anim'
+            property 'forge.enabledGameTestNamespaces', 'plr_anim'
 
             arg "-mixin.config=plr_anim.mixins.json"
 
             mods {
-                player_anim {
+                plr_anim {
                     source sourceSets.main
                 }
             }
@@ -65,12 +65,12 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'player_anim'
+            property 'forge.enabledGameTestNamespaces', 'plr_anim'
 
             arg "-mixin.config=plr_anim.mixins.json"
 
             mods {
-                player_anim {
+                plr_anim {
                     source sourceSets.main
                 }
             }
@@ -86,12 +86,12 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'player_anim'
+            property 'forge.enabledGameTestNamespaces', 'plr_anim'
 
             arg "-mixin.config=plr_anim.mixins.json"
 
             mods {
-                player_anim {
+                plr_anim {
                     source sourceSets.main
                 }
             }
@@ -108,10 +108,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'player_anim', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '-mixin.config=plr_anim.mixins.json'
+            args '--mod', 'plr_anim', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '-mixin.config=plr_anim.mixins.json'
 
             mods {
-                player_animmod {
+                plr_animmod {
                     source sourceSets.main
                 }
             }
@@ -131,7 +131,7 @@ dependencies {
 }
 
 mixin {
-    add sourceSets.main, "player_anim.refmap.json"
+    add sourceSets.main, "plr_anim.refmap.json"
 }
 
 jar {
