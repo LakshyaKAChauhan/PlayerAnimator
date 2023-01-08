@@ -17,11 +17,13 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.18.2_1.0.1'
+version = '1.18.2_1.0.2'
 group = 'net.chauhanDevs.advance_modder'
 archivesBaseName = 'player_anim'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
@@ -32,6 +34,10 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
+
+            property 'mixin.env.disableRefMap', 'true'
+
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             property 'forge.logging.markers', 'REGISTRIES'
 
@@ -51,6 +57,10 @@ minecraft {
         server {
             workingDirectory project.file('run')
 
+            property 'mixin.env.disableRefMap', 'true'
+
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             property 'forge.logging.markers', 'REGISTRIES'
 
             property 'forge.logging.console.level', 'debug'
@@ -67,6 +77,10 @@ minecraft {
         }
         gameTestServer {
             workingDirectory project.file('run')
+
+            property 'mixin.env.disableRefMap', 'true'
+
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             property 'forge.logging.markers', 'REGISTRIES'
 
@@ -86,6 +100,10 @@ minecraft {
         data {
             workingDirectory project.file('run')
 
+            property 'mixin.env.disableRefMap', 'true'
+
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             property 'forge.logging.markers', 'REGISTRIES'
 
             property 'forge.logging.console.level', 'debug'
@@ -101,8 +119,6 @@ minecraft {
     }
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
-
 repositories {
     maven {
         url "https://cursemaven.com"
@@ -111,10 +127,11 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.18.2-40.2.0'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 mixin {
-    add sourceSets.main, "player_anim.mixin-refmap.json"
+    add sourceSets.main, "player_anim.refmap.json"
 }
 
 jar {
