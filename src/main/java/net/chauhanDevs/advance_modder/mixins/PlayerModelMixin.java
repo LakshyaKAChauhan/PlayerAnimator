@@ -22,7 +22,7 @@ public abstract class PlayerModelMixin<T extends LivingEntity> {
             int animationPosition = (int) float2;
             PlayerModel model = (PlayerModel) (Object) this;
             for (Animation animation : registeredAnimations.animations){
-                if(animation.shouldPlay(plr, animationPosition)){
+                if(animation.isPlaying()){
                     animation.onPlay(plr, model, animationPosition);
                     if(animation.getProperties().shouldResetAtEnd()){
                         animation.stop();

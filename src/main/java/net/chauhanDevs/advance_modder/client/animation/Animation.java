@@ -32,21 +32,6 @@ public class Animation{
      */
     public void onPlay(Player player, PlayerModel model, int frame){}
 
-    public final boolean shouldPlay(Player player, int frame){
-        //Get Flag1
-        boolean flag1;
-        if(player.isLocalPlayer()){
-            flag1 = frame != 0;
-        }else{
-            flag1 = false;
-        }
-
-        //Get Flag2
-        boolean flag2 = isPlaying();
-
-        return flag1 && flag2;
-    }
-
     public void play(){
         this.isPlaying = true;
     }
