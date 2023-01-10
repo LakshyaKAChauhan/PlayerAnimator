@@ -16,10 +16,10 @@ This Simple Library Helps Modder To Animate The Player In Just Come Few Lines Of
 Refer To This Mod's Wiki On How To Use It.
 Use This Library Now!
 '''
-[[dependencies.plr_anim]] #optional
-    modId="forge" #mandatory
-    mandatory=true #mandatory
-    versionRange="[40,)" #mandatory
+[[dependencies.plr_anim]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.plr_anim]]

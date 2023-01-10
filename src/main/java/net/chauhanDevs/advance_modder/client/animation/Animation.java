@@ -18,7 +18,7 @@ public class Animation{
     private boolean isPlaying = false;
 
     /**
-     * Specify Your Animation By Overriding This Method Here!<br>
+     * <h2>Specify Your Animation By Overriding This Method Here!</h2>
      * <br>
      * Whole Example Mentioned Below:<br>
      * <br>
@@ -28,9 +28,10 @@ public class Animation{
      * }else if(frame == 1){<br>
      * &#9model.bodypart2.setRotation(0, 90, 90)<br>
      * }<br>
-     * //Additional Code<br>
+     * //Additional Code<br><br>
+     * <h3>@return Tells If The Above Skin Layer Should Be Copied From Below Layer</h3>
      */
-    public void onPlay(Player player, PlayerModel model, int frame){}
+    public boolean onPlay(Player player, PlayerModel model, int frame){return true;}
 
     public void play(){
         this.isPlaying = true;
