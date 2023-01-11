@@ -1,7 +1,6 @@
 package net.chauhanDevs.advance_modder;
 
 import com.mojang.logging.LogUtils;
-import net.chauhanDevs.advance_modder.test.Anims;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +20,6 @@ public class PlayerAnimator
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
-        Anims.init();
         //Outputs That Mod Has Loaded
         LOGGER.debug("Player Animator Loaded Up!");
     }

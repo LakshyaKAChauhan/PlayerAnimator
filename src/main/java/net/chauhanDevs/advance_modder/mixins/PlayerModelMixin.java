@@ -1,7 +1,6 @@
 package net.chauhanDevs.advance_modder.mixins;
 
 import net.chauhanDevs.advance_modder.client.animation.Animation;
-import net.chauhanDevs.advance_modder.utils.PlayerModelMixinHelper;
 import net.chauhanDevs.advance_modder.registeredAnimations.registeredAnimations;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,9 +21,7 @@ public abstract class PlayerModelMixin<T extends LivingEntity> {
             float float2 = float1 * 10;
             int animationPosition = (int) float2;
             boolean shouldCopyLayerToItsLayerBelow = false;
-            PlayerModel model = (PlayerModel) (Object) this;
-            PlayerModelMixinHelper.FixedPlayerModel fixedPlayerModel = PlayerModelMixinHelper.FixedPlayerModel.of(model);
-            for (Animation animation : registeredAnimations.animations){
+            PlayerModel model = (PlayerModel) (Object) this;for (Animation animation : registeredAnimations.animations){
                 if(!animation.isPlaying()){
                     shouldCopyLayerToItsLayerBelow = animation.onPlay(plr, model, animationPosition);
                     if(animation.getProperties().shouldResetAtEnd()){
@@ -32,9 +29,6 @@ public abstract class PlayerModelMixin<T extends LivingEntity> {
                     }
                 }
             }
-            //Fix Model, From Degrees To Minecraft Rotation
-            assert fixedPlayerModel != null;
-            PlayerModelMixinHelper.resolvePlayerModel(fixedPlayerModel, model, shouldCopyLayerToItsLayerBelow);
         }
     }
 
