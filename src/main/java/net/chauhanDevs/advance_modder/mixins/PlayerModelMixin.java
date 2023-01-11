@@ -20,14 +20,23 @@ public abstract class PlayerModelMixin<T extends LivingEntity> {
             float float1 = animPos - int1;
             float float2 = float1 * 10;
             int animationPosition = (int) float2;
-            boolean shouldCopyLayerToItsLayerBelow = false;
+            boolean shouldCopyLayerToItsLayerBelow = true;
             PlayerModel model = (PlayerModel) (Object) this;for (Animation animation : registeredAnimations.animations){
                 if(!animation.isPlaying()){
-                    shouldCopyLayerToItsLayerBelow = animation.onPlay(plr, model, animationPosition);
-                    if(animation.getProperties().shouldResetAtEnd()){
-                      animation.stop();
+                    boolean playResult = animation.onPlay(plr, model, animationPosition);
+                    if(!playResult){
+                        shouldCopyLayerToItsLayerBelow = false;
                     }
+                    /*if(animation.getProperties().shouldResetAtEnd()){
+                      animation.stop();
+                    }*/
                 }
+            }
+            if(shouldCopyLayerToItsLayerBelow){
+                model.leftSleeve.copyFrom(model.leftArm);
+                model.rightSleeve.copyFrom(model.rightArm);
+                model.leftPants.copyFrom(model.leftLeg);
+                model.rightPants.copyFrom(model.rightLeg);
             }
         }
     }
