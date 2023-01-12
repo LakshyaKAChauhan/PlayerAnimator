@@ -17,7 +17,7 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin:'org.spongepowered.mixin'
 
-version = '1.18.2_1.0.3'
+version = '1.18.2_1.0.4'
 group = 'net.chauhanDevs.advance_modder'
 archivesBaseName = 'plr_anim'
 
@@ -140,10 +140,10 @@ mixin {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "Test Mod",
+                "Specification-Title"     : "Player Animator",
                 "Specification-Vendor"    : "LakshyaK2011",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
-                "Implementation-Title"    : "Test Mod",
+                "Implementation-Title"    : "Player Animator",
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "LakshyaK2011",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
