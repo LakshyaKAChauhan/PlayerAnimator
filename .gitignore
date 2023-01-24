@@ -3,3 +3,6 @@
 build/*
 run/*
 releases/*
+
+#Test Packages
+src/main/java/net/chauhanDevs/advance_modder/test
