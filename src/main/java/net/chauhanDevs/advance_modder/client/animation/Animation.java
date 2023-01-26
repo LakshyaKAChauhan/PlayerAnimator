@@ -4,7 +4,7 @@ import net.minecraft.client.model.PlayerModel;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class Animation{
+public abstract class Animation{
     @NotNull private Animation.Properties properties;
     @NotNull private final String Id;
 

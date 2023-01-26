@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "net.chauhanDevs.advance_modder.mixins",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "plr_anim.refmap.json",
   "mixins": [
   ],
   "client": [
