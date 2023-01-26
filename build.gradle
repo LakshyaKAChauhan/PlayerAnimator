@@ -17,7 +17,7 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin:'org.spongepowered.mixin'
 
-version = '1.18.2_1.0.4'
+version = '1.18.2_1.1.0'
 group = 'net.chauhanDevs.advance_modder'
 archivesBaseName = 'plr_anim'
 
@@ -35,7 +35,7 @@ minecraft {
         client {
             workingDirectory project.file('run')
 
-            property 'mixin.env.disableRefMap', 'true'
+            property 'mixin.env.remapRefMap', 'true'
 
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
@@ -57,7 +57,7 @@ minecraft {
         server {
             workingDirectory project.file('run')
 
-            property 'mixin.env.disableRefMap', 'true'
+            property 'mixin.env.remapRefMap', 'true'
 
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
@@ -79,7 +79,7 @@ minecraft {
         gameTestServer {
             workingDirectory project.file('run')
 
-            property 'mixin.env.disableRefMap', 'true'
+            property 'mixin.env.remapRefMap', 'true'
 
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
@@ -101,7 +101,7 @@ minecraft {
         data {
             workingDirectory project.file('run')
 
-            property 'mixin.env.disableRefMap', 'true'
+            property 'mixin.env.remapRefMap', 'true'
 
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 

@@ -4,7 +4,7 @@ import net.minecraft.client.model.PlayerModel;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class Animation{
+public abstract class Animation{
     @NotNull private Animation.Properties properties;
     @NotNull private final String Id;
 
@@ -43,11 +43,14 @@ public class Animation{
 
     public boolean isPlaying(){return this.isPlaying;}
 
-    public String getId(){return this.Id;}
+    public @NotNull String getId(){return this.Id;}
 
-    public Animation.Properties getProperties(){return this.properties;}
+    public Animation.@NotNull Properties getProperties(){return this.properties;}
 
     public static class Properties{
+        /**
+         * WARNING: EXPERIMENTAL PROPERTY!
+         */
         boolean shouldResetAtEnd = true;
 
         public Animation.Properties shouldResetAtEnd(boolean shouldResetAtEnd){
